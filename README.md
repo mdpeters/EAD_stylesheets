@@ -21,3 +21,9 @@ editing. It creates the following columns:
 * GENERAL NOTE (ead:odd)
 * RESTRICTIONS NOTE (ead:accessrestrict)
 * EXPECTED FILENAME (guesses at possible filename based on local file naming conventions, used for digitization projects)
+
+### oacscrub.xsl:
+Does some housekeeping to EAD files exported from ArchivesSpace before uploading to OAC.
+* Removes `dao` tags that point to restricted arks listed in a separate xml file named `restrictedarks.xml`
+* Adds `xlink:role="http://oac.cdlib.org/arcrole/link/"` to `dao`
+* Adds the OAC ark to the finding aid if it's been uploaded before, pulled from a separate xml file `oacarks.xml`
